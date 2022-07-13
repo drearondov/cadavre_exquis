@@ -1,0 +1,63 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+
+<MenuScreen>:
+
+    poets_menu: poets_menu
+
+
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+        spacing: 48
+
+        canvas:
+            Color:
+                rgba: hex('#FDFDFD')
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Heading:
+            heading: "Escoge tu veneno..."
+            type_size: "50sp"
+            pos_hint: {"center_y": 0.5, "center_x": 0.5}
+            size_hint: 0.8, 0.15
+
+        # Grid Menu
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            dscroll_timeout: 250
+
+            GridLayout:
+                id: poets_menu
+                size_hint_y: None
+                cols: 3
+                row_default_height: root.height * 0.1
+                height: self.minimum_height
+                spacing: 36
+                padding: [36, 0]
+
+        # Bottom buttons
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, 0.1
+            padding: [144, 0]
+            spacing: 80
+
+            ArrowLeftButton:
+                on_release: root.manager.current = "home_screen"
+
+            Button:
+                text: "Biografías"
+                font_size: "20sp"
+                on_release:
+                    root.manager.current = "bio_screen"
+                    root.manager.ids["bio_screen"].populate_screen()
+
+            ArrowRightButton:
+                label_message: "Inicio"
+                on_release: root.start_game()

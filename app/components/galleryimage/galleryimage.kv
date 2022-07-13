@@ -1,0 +1,33 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+<GalleryImage>
+
+    image_source: ""
+    image_title: ""
+
+    orientation: "vertical"
+    size_hint: 0.9, 0.8
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    spacing: 24
+
+    canvas:
+        Color:
+            rgba: hex('#FDFDFD')
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Image:
+        source: root.image_source
+
+    Label:
+        text: root.image_title
+        halign: "left"
+        size: self.texture_size
+        pos_hint: {"left": 0.1}
+        font_size: "15sp"
+        size_hint_y: 0.25
+        text_size: self.width, None
+        height: self.texture_size[1]

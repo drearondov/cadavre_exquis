@@ -1,0 +1,39 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+<BioView>
+    poet_name: ""
+    poet_bio: ""
+
+    orientation: "vertical"
+    size_hint: 0.9, 0.8
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    spacing: 24
+
+    canvas:
+        Color:
+            rgba: hex('#FDFDFD')
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Heading:
+        heading: root.poet_name
+        pos_hint: {"left": 0.1}
+        size_hint: 1, 0.25
+        type_size: ("20sp")
+
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            text: root.poet_bio
+            halign: "left"
+            size: self.texture_size
+            pos_hint: {"left": 0.1}
+            font_size: "15sp"
+            size_hint_y: None
+            text_size: self.width, None
+            height: self.texture_size[1]

@@ -1,0 +1,72 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+
+<FinishModal>
+
+    cadavre_title: cadavre_title
+
+    auto_dismiss: False
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: 0.4, 0.5
+        padding: 64, 48
+        spacing: 24
+
+        canvas:
+            Color:
+                rgba: hex('#FDFDFD')
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [48]
+
+        Heading:
+            heading: "Terminar cadaver"
+            pos_hint: {"center_x": 0.5}
+            size_hint: 0.8, 0.35
+            type_size: 60
+
+        Heading:
+            heading: "Título"
+            size_hint: 0.2, 0.2
+            type_size: 40
+            align_heading: "left"
+
+        InputField:
+            size_hint: 1, 0.4
+            TextInput:
+                id: cadavre_title
+                color: hex('#333333')
+                cursor_color: hex('#333333')
+                hint_text: "título"
+
+        Button:
+            text: "Nuevo juego"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"center_x": 0.5}
+            on_release:
+                root.dismiss()
+                root.parent.children[1].children[0].clear_words()
+                root.parent.children[1].current = "menu_screen"
+
+        BoxLayout:
+            orientation:"horizontal"
+            size_hint: 1, 0.25
+
+            ArrowLeftButton:
+                type_size: "15sp"
+                on_release: root.dismiss()
+                padding: 0, 28
+
+            ArrowRightButton:
+                type_size: "15sp"
+                label_message: "Guardar"
+                padding: 0, 28
+                on_release:
+                    root.dismiss()
+                    root.parent.children[1].children[0].save_image(root.ids["cadavre_title"].text)
+

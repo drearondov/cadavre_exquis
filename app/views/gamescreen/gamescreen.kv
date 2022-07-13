@@ -1,0 +1,46 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+
+<GameScreen>:
+
+    bag_of_words: bag_of_words
+
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+        spacing: 48
+        padding: 50
+
+        canvas:
+            Color:
+                rgba: hex('#FDFDFD')
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        # Bag of Words
+        StackLayout:
+            id: bag_of_words
+            padding: 80
+
+        # Bottom buttons
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, 0.1
+            padding: [144, 0]
+            spacing: 600
+
+            ArrowLeftButton:
+                font_size: "20sp"
+                on_release:
+                    root.clear_words()
+                    root.manager.current = "menu_screen"
+
+            ArrowRightButton:
+                label_message: "Terminar"
+                font_size: "20sp"
+                on_release:
+                    root.finish_game()
+                

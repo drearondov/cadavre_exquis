@@ -1,0 +1,45 @@
+#: kivy 2.1.0
+
+#: import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+
+#: include app/views/homescreen/homescreen.kv
+#: include app/views/menuscreen/menuscreen.kv
+#: include app/views/gamescreen/gamescreen.kv
+#: include app/views/aboutscreen/aboutscreen.kv
+#: include app/views/demoscreen/demoscreen.kv
+#: include app/views/bioscreen/bioscreen.kv
+#: include app/views/galleryscreen/galleryscreen.kv
+
+#: include app/components/widgets.kv
+#: include app/components/bioview/bioview.kv
+#: include app/components/poettoggle/poettoggle.kv
+#: include app/components/wordlabel/wordlabel.kv
+#: include app/components/galleryimage/galleryimage.kv
+#: include app/components/finishmodal/finishmodal.kv
+
+
+ScreenManager:
+    id: screen_manager
+    transition: FallOutTransition()
+
+    HomeScreen:
+        name: "home_screen"
+        id: home_screen
+    MenuScreen:
+        name: "menu_screen"
+        id: menu_screen
+    GameScreen:
+        name: "game_screen"
+        id: game_screen
+    AboutScreen:
+        name: "about_screen"
+        id: about_screen
+    DemoScreen:
+        name: "demo_screen"
+        id: demo_screen
+    BioScreen:
+        name: "bio_screen"
+        id: bio_screen
+    GalleryScreen:
+        name: "gallery_screen"
+        id: gallery_screen

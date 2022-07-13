@@ -1,0 +1,91 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+<Label>
+    font_name: 'assets/fonts/Arvo-Regular.ttf'
+    font_size: "25sp"
+    color: hex("#333333")
+
+<Heading@BoxLayout>
+    orientation: "vertical"
+    heading: ""
+    align_heading: "center"
+    type_size: 0
+
+    Label:
+        text: root.heading
+        font_size: root.type_size
+        color: hex("#333333")
+        text_size: self.size
+        halign: root.align_heading
+        size: self.texture_size
+
+    Image:
+        source: "assets/img/underline.png"
+        size_hint: 1, 0.25
+
+<Button>:
+    font_size: "25sp"
+    background_normal: "assets/img/button_light.png"
+    background_down: "assets/img/toggle_on.png"
+    color: hex("#333333")
+
+<ArrowLeftButton@BoxLayout+Button>
+    orientation: "horizontal"
+    background_normal: "assets/img/button_light.png"
+    background_down: "assets/img/toggle_on.png"
+    padding: [144, 28]
+    spacing: 32
+
+    type_size: "20sp"
+
+    Image:
+        source: "assets/img/arrow_left.png"
+        size_hint: 0.25, 1
+
+    Label:
+        text: "Atrás"
+        font_size: root.type_size
+        text_size: self.size
+        halign: "left"
+
+<ArrowRightButton@BoxLayout+Button>
+    orientation: "horizontal"
+    background_normal: "assets/img/button_light.png"
+    background_down: "assets/img/toggle_on.png"
+    padding: [144, 28]
+    spacing: 32
+
+    label_message: ""
+    type_size: "20sp"
+
+    Label:
+        text: root.label_message
+        font_size: root.type_size
+        text_size: self.size
+        halign: "right"
+
+    Image:
+        source: "assets/img/arrow_right.png"
+        size_hint: 0.25, 1
+
+<InputField@BoxLayout>
+    orientation: "vertical"
+    padding: 12
+
+    canvas:
+        Color:
+            rgba: hex('#333333')
+        Line:
+            rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], 32, 100)
+            width: 2
+
+<TextInput>
+    multiline: False
+    background_normal: 'assets/img/button_light.png'
+    background_active: 'assets/img/button_light.png'
+    font_name: 'assets/fonts/Arvo-Regular.ttf'
+    font_size: ('12sp')
+    foreground_color: hex('#333333')
+    padding: [16, 8]

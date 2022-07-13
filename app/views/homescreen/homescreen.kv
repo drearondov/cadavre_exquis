@@ -1,0 +1,61 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+<HomeScreen>:
+
+    FloatLayout:
+        size: root.width, root.height
+
+        canvas:
+            Color:
+                rgba: hex("#FDFDFD")
+            Rectangle:
+                size: self.size
+                pos:self.pos
+
+        # Logo
+        Heading:
+            heading: "Cadavre Exquis"
+            pos_hint: {"center_x": 0.5, "center_y": 0.65}
+            size_hint: 0.75, 0.3
+            type_size: "85sp"
+
+        # Menu
+        GridLayout:
+            cols: 2
+            size_hint: 0.5,0.3
+            pos_hint: {"center_x": 0.5, "top": 0.45}
+            padding: 30, 30
+            spacing: 50, 30
+
+            Button:
+                text: "Nuevo juego"
+                on_release:
+                    root.manager.current = "menu_screen"
+                    root.manager.ids["menu_screen"].populate_screen()
+
+            Button:
+                text: "Demo"
+                on_release: root.manager.current = "demo_screen"
+
+            Button:
+                text: "Biografías"
+                on_release:
+                    root.manager.current = "bio_screen"
+                    root.manager.ids["bio_screen"].populate_screen()
+
+            Button:
+                text: "Galería"
+                on_release:
+                    root.manager.current = "gallery_screen"
+                    root.manager.ids["gallery_screen"].populate_screen()
+
+            Button:
+                text: "Sobre Cadavre Exquis"
+                on_release: root.manager.current = "about_screen"
+
+            Button:
+                text: "Idioma\n(proximamente)"
+                text_size: self.size
+                halign: "center"

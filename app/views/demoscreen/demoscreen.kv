@@ -1,0 +1,28 @@
+#:kivy 2.1.0
+
+#: import hex kivy.utils.get_color_from_hex
+
+<DemoScreen>
+
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+        spacing: 48
+        padding: 48
+
+        canvas:
+            Color:
+                rgba: hex('#FDFDFD')
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        ArrowLeftButton:
+            on_release: root.manager.current = "home_screen"
+            size_hint: 0.25, 0.1
+            pos_hint: {"left": 0}
+
+        VideoPlayer:
+            source: "assets/video/cadavre_exquis_demo.mp4"
+            state: "play"
+            options: {"eos": "loop"}
