@@ -1,34 +1,32 @@
----
-title: Poetas Exquisitos
----
+# Cadavre Exquis
 
-[![image](https://img.shields.io/pypi/v/poetas_exquisitos.svg)](https://pypi.python.org/pypi/poetas_exquisitos)
+Both a tool to help with the dreaded artist block and a collaborative game based on the surrealist technique of the **Exquisite Corpse** and **Whiteout Poems**. In this version of the game, the players will use the words from the world greatest to give life to new creations.
 
-[![image](https://img.shields.io/travis/drearondov/poetas_exquisitos.svg)](https://travis-ci.org/drearondov/poetas_exquisitos)
+![Screenshots](assets/img/screens.png)
 
-[![Build status on Appveyor](https://ci.appveyor.com/api/projects/status/drearondov/branch/master?svg=true)](https://ci.appveyor.com/project/drearondov/poetas_exquisitos/branch/master)
+## Installation
 
-[![Documentation Status](https://readthedocs.org/projects/poetas-exquisitos/badge/?version=latest)](https://poetas-exquisitos.readthedocs.io/en/latest/?badge=latest)
+To install, dowload the source file into your computer and on your terminal type
 
-Crea tu propio cadáver exquisito con las palabras de los más grades
-poetas de la historia mundial.
-
--   Free software: GNU General Public License v3
--   Documentation: <https://drearondov.github.io/poetas_exquisitos>
-
-# Installation:
-
-``` console
-$ pip install poetas_exquisitos
+``` bash
+pip install cadavre_exquis
 ```
 
-# Features
+## Features
 
--   TODO
+- Select up to 4 poets to use the words of their most famous poems
+- Explore the lives of each poet
+- Save your creations and create your own collection
+- English and spanish support *(coming soon)*
 
-# Credits
+## License & Credits
+
+- **License:** GNU General Public License v3
+- **Documentation:** <https://drearondov.github.io/poetas_exquisitos>
 
 This package was created with
 [Cookiecutter](https://github.com/audreyr/cookiecutter) and the
 [wboxx1/cookiecutter-pypackage-poetry](https://github.com/wboxx1/cookiecutter-pypackage-poetry)
 project template.
+
+Data on the poets and poems can be found at [Poetry Soup](https://www.poetrysoup.com)

@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "poetas_exquisitos"
-version = "0.1.0"
+name = "cadavre_exquis"
+version = "0.1.1"
 description = "Crea tu propio cadáver exquisito con las palabras de los más grades poetas de la historia mundial."
 authors = ["Andrea Rondon <andrea.estefania.rv@gmail.com>"]
 license = "GNU General Public License v3"
 
 readme = "README.md"
 
-repository = "https://github.com/drearondov/poetas_exquisitos"
+repository = "https://github.com/drearondov/cadavre_exquis"
 
-homepage = "https://drearondov.github.io/poetas_exquisitos"
+homepage = "https://drearondov.github.io/cadavre_exquis"
 
 packages = [
     { include = "src"},
@@ -19,39 +19,36 @@ classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
     "Natural Language :: English",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10"
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11"
 ]
 [tool.poetry.dependencies]
-python = ">=3.9, <4"
-Kivy = "^2.1.0"
+python = ">=3.9,<3.12"
+kivy = "^2.1.0"
 ffpyplayer = "^4.3.5"
 
-[tool.poetry.dev-dependencies]
-bump2version = "^0.5.0"
-pip = "^18.1"
-wheel = "^0.32.1"
-watchdog = "^0.9.0"
-flake8 = "^3.5.0"
-tox = "^3.5.2"
-coverage = "^4.5.1"
-Sphinx = "^1.8.1"
-twine = "^1.12.1"
+[tool.poetry.group.dev.dependencies]
+bump2version = ">=0.5.0"
+pip = ">=18.1"
+wheel = ">=0.32.1"
+watchdog = ">=0.9.0"
+flake8 = ">=3.5.0"
+tox = ">=3.5.2"
+coverage = ">=4.5.1"
+Sphinx = ">=1.8.1"
+twine = ">=1.12.1"
 
-pytest = "^3.8.2"
-pytest-runner = "^4.2"
-pytest-cov = "^2.6.0"
-setuptools = "^40.5.0"
-rstcheck = "^3.3.1"
-ptpython = "^2.0.4"
-pandas = "^1.4.2"
-ipykernel = "^6.13.1"
-nltk = "^3.7"
-Cython = "^0.29.30"
+pytest = ">=3.8.2"
+pytest-runner = ">=4.2"
+pytest-cov = ">=2.6.0"
+setuptools = ">=40.5.0"
+rstcheck = ">=3.3.1"
+ptpython = ">=2.0.4"
+pandas = ">=1.4.2"
+Cython = ">=0.29.30"
 kivy-ios = "^1.3.0"
+spacy = ">=3.4.4"
+bs4 = "^0.0.1"
+ipython = "^8.7.0"
+jupyter = "^1.0.0"
