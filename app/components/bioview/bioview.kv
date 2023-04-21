@@ -13,13 +13,13 @@
 
     canvas:
         Color:
-            rgba: hex('#FDFDFD')
+            rgba: hex("#E8DDD4")
         Rectangle:
             size: self.size
             pos: self.pos
 
-    Heading:
-        heading: root.poet_name
+    Title:
+        text: root.poet_name
         pos_hint: {"left": 0.1}
         size_hint: 1, 0.25
         type_size: ("20sp")
@@ -28,8 +28,9 @@
         do_scroll_x: False
         do_scroll_y: True
 
-        Label:
+        Text:
             text: root.poet_bio
+            color: hex("323232")
             halign: "left"
             size: self.texture_size
             pos_hint: {"left": 0.1}

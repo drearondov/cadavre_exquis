@@ -1,12 +1,13 @@
 from kivy.clock import Clock
 from kivy.properties import BooleanProperty, NumericProperty, StringProperty
 from kivy.uix.togglebutton import ToggleButton
+from kivy.uix.boxlayout import BoxLayout
 
 from app.components.bioview.bioview import BioView
 
 
-class PoetToggle(ToggleButton):
-    __events__ = ("on_long_press", )
+class PoetToggle(BoxLayout, ToggleButton):
+    __events__ = ("on_long_press",)
 
     long_press_time = NumericProperty(1)
     pressed = BooleanProperty(False)
@@ -15,7 +16,7 @@ class PoetToggle(ToggleButton):
 
     def __init__(self, **kwargs):
         super(PoetToggle, self).__init__(**kwargs)
-    
+
     def on_press(self):
         self.pressed = True
 
@@ -30,8 +31,8 @@ class PoetToggle(ToggleButton):
 
     def _do_long_press(self, dt):
         if self.pressed == True:
-            self.dispatch('on_long_press')
-        
+            self.dispatch("on_long_press")
+
     def on_long_press(self, *largs):
         self.show_bio()
 

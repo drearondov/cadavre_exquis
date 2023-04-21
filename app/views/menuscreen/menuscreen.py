@@ -3,7 +3,6 @@ import pandas as pd
 import random
 
 from typing import List
-
 from kivy.uix.screenmanager import Screen
 
 from app.components.poettoggle.poettogle import PoetToggle
@@ -14,16 +13,15 @@ class MenuScreen(Screen):
         super(Screen, self).__init__(**kwargs)
         self.in_game_poets = []
         self.bag_of_words = []
-        
-    def populate_screen(self):
+
+    def populate_screen(self) -> None:
         poets = pd.read_csv("assets/data/poets_data.csv")
 
         for poet_name in poets["full_name"].unique():
-
             poet_data = poets.loc[poets["full_name"] == poet_name]
             poet_bio = poet_data["bio"].values[0]
 
-            poet_toggle = PoetToggle(text=poet_name)
+            poet_toggle = PoetToggle(poet_name=poet_name)
             self.ids["poets_menu"].add_widget(poet_toggle)
 
     def get_selected_poets(self) -> List:
@@ -31,16 +29,16 @@ class MenuScreen(Screen):
 
         for poet in self.ids["poets_menu"].children:
             if poet.state == "down":
-                selected_poets.append(poet.text)
+                selected_poets.append(poet.poet_name)
             else:
                 pass
 
             if len(selected_poets) > 4:
                 print("Can't select more than 4 poets")
-        
+
         return selected_poets
 
-    def start_game(self) -> List:
+    def start_game(self) -> None:
         poems = pd.read_csv("assets/data/poems_data.csv", usecols=[1, 2, 3, 4])
         selected_poets = self.get_selected_poets()
 

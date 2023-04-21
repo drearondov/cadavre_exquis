@@ -17,55 +17,69 @@
 
         canvas:
             Color:
-                rgba: hex('#FDFDFD')
+                rgba: hex("#E8DDD4")
             RoundedRectangle:
                 size: self.size
                 pos: self.pos
                 radius: [48]
 
-        Heading:
-            heading: "Terminar cadaver"
+        Title:
+            text: "[u]Finish corps[/u]"
             pos_hint: {"center_x": 0.5}
             size_hint: 0.8, 0.35
-            type_size: 60
+            font_size: 60
+            markup: True
 
-        Heading:
-            heading: "Título"
+        Title:
+            text: "[u]Títle[/u]"
             size_hint: 0.2, 0.2
-            type_size: 40
+            font_size: 40
             align_heading: "left"
+            markup: True
 
-        InputField:
+        TextInput:
+            id: cadavre_title
             size_hint: 1, 0.4
-            TextInput:
-                id: cadavre_title
-                color: hex('#333333')
-                cursor_color: hex('#333333')
-                hint_text: "título"
+            color: hex('#333333')
+            cursor_color: hex('#333333')
+            hint_text: "title"
 
-        Button:
-            text: "Nuevo juego"
-            font_size: "15sp"
-            size_hint: 0.5, 0.2
-            pos_hint: {"center_x": 0.5}
-            on_release:
-                root.dismiss()
-                root.parent.children[1].children[0].clear_words()
-                root.parent.children[1].current = "menu_screen"
+        Title:
+            text: "[u]Note[/u]"
+            size_hint: 0.2, 0.2
+            font_size: 40
+            align_heading: "left"
+            markup: True
+
+        TextInput:
+            id: cadavre_title
+            size_hint: 1, 0.4
+            color: hex('#333333')
+            cursor_color: hex('#333333')
+            hint_text: "note"
 
         BoxLayout:
             orientation:"horizontal"
-            size_hint: 1, 0.25
+            size_hint: 1, 0.33
 
             ArrowLeftButton:
                 type_size: "15sp"
+                size_hint: 0.5, 1
                 on_release: root.dismiss()
-                padding: 0, 28
+
+            RegularButton:
+                label_message: "New game"
+                type_size: "15sp"
+                pos_hint: {"center_x": 0.5}
+                on_release:
+                    root.dismiss()
+                    root.parent.children[1].children[0].clear_words()
+                    root.parent.children[1].current = "menu_screen"
 
             ArrowRightButton:
                 type_size: "15sp"
-                label_message: "Guardar"
-                padding: 0, 28
+                label_message: "Save"
+                size_hint: 0.5, 1
                 on_release:
                     root.dismiss()
                     root.parent.children[1].children[0].save_image(root.ids["cadavre_title"].text)

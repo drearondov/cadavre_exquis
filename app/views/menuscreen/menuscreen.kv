@@ -15,16 +15,17 @@
 
         canvas:
             Color:
-                rgba: hex('#FDFDFD')
+                rgba: hex("#E8DDD4")
             Rectangle:
                 size: self.size
                 pos: self.pos
 
-        Heading:
-            heading: "Escoge tu veneno..."
-            type_size: "50sp"
+        Title:
+            text: "[u]Pick your poison...[/u]"
+            font_size: "50sp"
             pos_hint: {"center_y": 0.5, "center_x": 0.5}
             size_hint: 0.8, 0.15
+            markup: True
 
         # Grid Menu
         ScrollView:
@@ -38,26 +39,30 @@
                 cols: 3
                 row_default_height: root.height * 0.1
                 height: self.minimum_height
-                spacing: 36
-                padding: [36, 0]
+                spacing: [56, 24]
+                padding: [48, 0]
 
         # Bottom buttons
         BoxLayout:
             orientation: "horizontal"
             size_hint: 1, 0.1
-            padding: [144, 0]
-            spacing: 80
+            padding: [256, 0, 256, 24]
+            spacing: 256
 
             ArrowLeftButton:
+                size_hint: 0.3, 1
                 on_release: root.manager.current = "home_screen"
 
-            Button:
-                text: "Biografías"
+            RegularButton:
+                label_message: "Bios"
+                size_hint: 0.25, 1
                 font_size: "20sp"
+                padding: [12, 0, 12, 36]
                 on_release:
                     root.manager.current = "bio_screen"
                     root.manager.ids["bio_screen"].populate_screen()
 
             ArrowRightButton:
-                label_message: "Inicio"
+                size_hint: 0.5, 1
+                label_message: "Start game"
                 on_release: root.start_game()

@@ -7,7 +7,15 @@
     poet_name: ""
     poet_bio: ""
 
-    font_size: "20sp"
-    background_normal: "assets/img/button_light.png"
+    orientation: "vertical"
+    background_normal: "assets/img/toggle_off.png"
     background_down: "assets/img/toggle_on.png"
-    color: hex("#333333")
+    padding: [72, 56, 72, 36]
+
+    type_size: "20sp"
+
+    Text:
+        text: root.poet_name
+        font_size: root.type_size
+        text_size: self.size
+        halign: "center"

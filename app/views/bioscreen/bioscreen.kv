@@ -16,16 +16,17 @@
 
         canvas:
             Color:
-                rgba: hex('#FDFDFD')
+                rgba: hex("#E8DDD4")
             Rectangle:
                 size: self.size
                 pos: self.pos
 
-        Heading:
-            heading: "Biographies"
-            type_size: "50sp"
+        Title:
+            text: "[u]Biographies[/u]"
+            font_size: "50sp"
             pos_hint: {"center_y": 0.5, "center_x": 0.5}
             size_hint: 0.4, 0.15
+            markup: True
 
         # Grid Menu
         ScrollView:
@@ -39,21 +40,21 @@
                 cols: 3
                 row_default_height: root.height * 0.3
                 height: self.minimum_height
-                spacing: 64
-                padding: [36, 0]
+                spacing: [56, 24]
+                padding: [48, 0]
 
         # Bottom buttons
         BoxLayout:
             orientation: "horizontal"
             size_hint: 1, 0.1
             padding: [144, 0]
-            spacing: 250
+            spacing: 560
 
             ArrowLeftButton:
                 on_release: root.manager.current = "home_screen"
 
             ArrowRightButton:
-                label_message: "Inicio"
+                label_message: "Start game"
                 on_release:
                     root.manager.current = "menu_screen"
                     root.manager.ids["menu_screen"].populate_screen()

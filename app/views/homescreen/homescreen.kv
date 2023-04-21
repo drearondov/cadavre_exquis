@@ -9,17 +9,17 @@
 
         canvas:
             Color:
-                rgba: hex("#FDFDFD")
+                rgba: hex("#E8DDD4")
             Rectangle:
                 size: self.size
                 pos:self.pos
 
         # Logo
-        Heading:
-            heading: "Cadavre Exquis"
+        Title:
+            text: "[u]Cadavre Exquis[/u]"
             pos_hint: {"center_x": 0.5, "center_y": 0.65}
             size_hint: 0.75, 0.3
-            type_size: "85sp"
+            font_size: "85sp"
 
         # Menu
         GridLayout:
@@ -27,35 +27,35 @@
             size_hint: 0.5,0.3
             pos_hint: {"center_x": 0.5, "top": 0.45}
             padding: 30, 30
-            spacing: 50, 30
+            spacing: 60, 30
 
-            Button:
-                text: "Nuevo juego"
+            MainButton:
+                label_message: "New Game"
                 on_release:
                     root.manager.current = "menu_screen"
                     root.manager.ids["menu_screen"].populate_screen()
 
-            Button:
-                text: "Demo"
+            MainButton:
+                label_message: "Demo"
                 on_release: root.manager.current = "demo_screen"
 
-            Button:
-                text: "Biografías"
+            MainButton:
+                label_message: "Bios"
                 on_release:
                     root.manager.current = "bio_screen"
                     root.manager.ids["bio_screen"].populate_screen()
 
-            Button:
-                text: "Galería"
+            MainButton:
+                label_message: "Morgue"
                 on_release:
                     root.manager.current = "gallery_screen"
                     root.manager.ids["gallery_screen"].populate_screen()
 
-            Button:
-                text: "Sobre Cadavre Exquis"
+            MainButton:
+                label_message: "About"
                 on_release: root.manager.current = "about_screen"
 
-            Button:
-                text: "Idioma\n(proximamente)"
+            MainButton:
+                label_message: "Language"
                 text_size: self.size
                 halign: "center"

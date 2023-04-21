@@ -1,11 +1,9 @@
----
-title: Credits
----
+# Credits
 
-# Development Lead
+## Development Lead
 
--   Andrea Rondon \<<andrea.estefania.rv@gmail.com>\>
+- Andrea Rondon \<<andrea.estefania.rv@gmail.com>\>
 
-# Contributors
+## Contributors
 
 None yet. Why not be the first?

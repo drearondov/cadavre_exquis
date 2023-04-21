@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Support for english and spanish
 * Package for iOS and Android
+* Configuration screen to manage language, background and fonts
+* Splash Screen
+
+## [0.1.2] - 2023-04-20
+
+### Changed
+
+* Full app redesign
+* Updated README
+
+## [0.1.1] - 2023-01-13
+
+### Changed
+
+* Using `Spacy` for data processing on the back end
+* updated README. Added Screenshots
 
 ## [0.1.0] - 2022-07-13
 
@@ -18,10 +34,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Create new game
 * View previously played games. Image gallery
 * Game demo video
-
-## [0.1.1] - 2023-01-13
-
-### Changed
-
-* Using `Spacy` for data processing on the back end
-* updated ReadMe. Added Screenshots

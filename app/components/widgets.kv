@@ -2,10 +2,25 @@
 
 #: import hex kivy.utils.get_color_from_hex
 
-<Label>
-    font_name: 'assets/fonts/Arvo-Regular.ttf'
+<Title@Label>
+    font_name: "assets/fonts/AbrilFatface-Regular.ttf"
     font_size: "25sp"
-    color: hex("#333333")
+    color: hex("#323232")
+    markup: True
+
+<BackgroundColor@Widget>
+    background_color: "#FFFFFF"
+    canvas.before:
+        Color:
+            rgba: hex(root.background_color)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<Text@Label+BackgroundColor>
+    background_color: "#FFFFFF"
+    font_name: "assets/fonts/Poppins-ExtraLight.ttf"
+    color: hex("#323232")
 
 <Heading@BoxLayout>
     orientation: "vertical"
@@ -25,17 +40,41 @@
         source: "assets/img/underline.png"
         size_hint: 1, 0.25
 
-<Button>:
-    font_size: "25sp"
-    background_normal: "assets/img/button_light.png"
+<MainButton@BoxLayout+Button>
+    orientation: "vertical"
+    background_normal: "assets/img/toggle_off.png"
     background_down: "assets/img/toggle_on.png"
-    color: hex("#333333")
+    padding: [64, 32, 64, 36]
+
+    label_message: ""
+    type_size: "20sp"
+
+    Text:
+        text: root.label_message
+        font_size: root.type_size
+        text_size: self.size
+        halign: "center"
+
+
+<RegularButton@BoxLayout+Button>
+    orientation: "vertical"
+    background_normal: "assets/img/toggle_off.png"
+    background_down: "assets/img/toggle_on.png"
+    padding: [64, 32, 64, 36]
+
+    label_message: ""
+    type_size: "20sp"
+
+    Title:
+        text: root.label_message
+        font_size: root.type_size
+        text_size: self.size
+        halign: "center"
 
 <ArrowLeftButton@BoxLayout+Button>
     orientation: "horizontal"
-    background_normal: "assets/img/button_light.png"
+    background_normal: "assets/img/toggle_off.png"
     background_down: "assets/img/toggle_on.png"
-    padding: [144, 28]
     spacing: 32
 
     type_size: "20sp"
@@ -44,27 +83,28 @@
         source: "assets/img/arrow_left.png"
         size_hint: 0.25, 1
 
-    Label:
-        text: "Atrás"
+    Title:
+        text: "Back"
         font_size: root.type_size
         text_size: self.size
         halign: "left"
+        valign: "middle"
 
 <ArrowRightButton@BoxLayout+Button>
     orientation: "horizontal"
-    background_normal: "assets/img/button_light.png"
+    background_normal: "assets/img/toggle_off.png"
     background_down: "assets/img/toggle_on.png"
-    padding: [144, 28]
     spacing: 32
 
     label_message: ""
     type_size: "20sp"
 
-    Label:
+    Title:
         text: root.label_message
         font_size: root.type_size
         text_size: self.size
         halign: "right"
+        valign: "middle"
 
     Image:
         source: "assets/img/arrow_right.png"
@@ -83,9 +123,9 @@
 
 <TextInput>
     multiline: False
-    background_normal: 'assets/img/button_light.png'
-    background_active: 'assets/img/button_light.png'
-    font_name: 'assets/fonts/Arvo-Regular.ttf'
-    font_size: ('12sp')
-    foreground_color: hex('#333333')
+    background_normal: "assets/img/button_light.png"
+    background_active: "assets/img/button_light.png"
+    font_name: "assets/fonts/Poppins-ExtraLight.ttf"
+    font_size: ("12sp")
+    foreground_color: hex('#323232')
     padding: [16, 8]
